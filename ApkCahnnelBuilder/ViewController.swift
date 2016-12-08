@@ -17,6 +17,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var channelPrefixText: NSTextField!
     @IBOutlet weak var encryptionText: NSPopUpButton!
     @IBOutlet weak var keyText: NSSecureTextField!
+    @IBOutlet weak var ivText: NSSecureTextField!
     
     var apkPath: String!
     var outputPath: String!
@@ -83,6 +84,17 @@ class ViewController: NSViewController {
                 showMessage(text: "请输入渠道名称前缀")
                 return false
             }
+            if "None" != self.encryptionText.selectedItem?.title {
+                if self.keyText.stringValue.isEmpty {
+                    showMessage(text: "请输入密钥")
+                    return false
+                }
+                if (self.encryptionText.selectedItem?.title.contains("CBC"))!
+                    && self.ivText.stringValue.isEmpty {
+                    showMessage(text: "CBC 模式需要输入向量")
+                    return false
+                }
+            }
         }
         return super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
     }
@@ -93,6 +105,9 @@ class ViewController: NSViewController {
             controller.outputPath = self.outputPath
             controller.channels = self.channelsText.string?.components(separatedBy: "\n")
             controller.channelPrefix = self.channelPrefixText.stringValue
+            controller.encryption = self.encryptionText.selectedItem?.title
+            controller.encryptionKey = self.keyText.stringValue
+            controller.encryptionIv = self.ivText.stringValue
         }
     }
     

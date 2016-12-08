@@ -8,6 +8,7 @@
 
 import Cocoa
 import ZipArchive
+import CryptoSwift
 
 class BuildViewController: NSViewController {
     
@@ -18,6 +19,9 @@ class BuildViewController: NSViewController {
     public var outputPath: String!
     public var channels: Array<String>!
     public var channelPrefix: String!
+    public var encryption: String?
+    public var encryptionKey: String?
+    public var encryptionIv: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +50,7 @@ class BuildViewController: NSViewController {
         let metaDir: String = tempDir + "/META-INF"
         for channel in channels {
             printLog(text: "开始打包渠道：" + channel)
-            let channelFileName = channelPrefix + channel
+            let channelFileName = channelPrefix + encrypt(text: channel)!
             // 创建渠道文件
             createEmptyFile(dir: metaDir, filename: channelFileName)
             // 压缩新的 apk 包
@@ -63,6 +67,24 @@ class BuildViewController: NSViewController {
         
         DispatchQueue.main.async {
             self.doneButton.isEnabled = true
+        }
+    }
+    
+    func encrypt(text: String) -> String? {
+        if encryption == nil || "None" == encryption {
+            return text
+        }
+        var mode = CryptoSwift.BlockMode.CBC
+        if (encryption?.contains("CBC"))! {
+            mode = .CBC
+        } else if (encryption?.contains("ECB"))! {
+            mode = .ECB
+        }
+        do {
+            let aes = try AES(key: encryptionKey!, iv: encryptionIv!, blockMode: mode, padding: PKCS7())
+            return try aes.encrypt(text.utf8.map({$0})).toBase64()!
+        } catch {
+            return nil
         }
     }
     

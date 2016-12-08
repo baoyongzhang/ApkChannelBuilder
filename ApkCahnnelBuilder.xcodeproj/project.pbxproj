@@ -14,6 +14,8 @@
 		29A8BFBA1DF7FEBA00980037 /* BuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8BFB91DF7FEBA00980037 /* BuildViewController.swift */; };
 		29A8BFBF1DF812F200980037 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8BFBB1DF80C6400980037 /* ZipArchive.framework */; };
 		29A8BFC01DF812F200980037 /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8BFBB1DF80C6400980037 /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29A8BFC31DF94F7F00980037 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8BFC21DF94F7F00980037 /* CryptoSwift.framework */; };
+		29A8BFC41DF94F7F00980037 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A8BFC21DF94F7F00980037 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +26,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				29A8BFC01DF812F200980037 /* ZipArchive.framework in Embed Frameworks */,
+				29A8BFC41DF94F7F00980037 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +42,7 @@
 		29A8BFB31DF6BCE600980037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A8BFB91DF7FEBA00980037 /* BuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildViewController.swift; sourceTree = "<group>"; };
 		29A8BFBB1DF80C6400980037 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = Carthage/Build/Mac/ZipArchive.framework; sourceTree = "<group>"; };
+		29A8BFC21DF94F7F00980037 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A8BFBF1DF812F200980037 /* ZipArchive.framework in Frameworks */,
+				29A8BFC31DF94F7F00980037 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 		29A8BF9E1DF6BCE600980037 = {
 			isa = PBXGroup;
 			children = (
+				29A8BFC21DF94F7F00980037 /* CryptoSwift.framework */,
 				29A8BFBB1DF80C6400980037 /* ZipArchive.framework */,
 				29A8BFA91DF6BCE600980037 /* ApkCahnnelBuilder */,
 				29A8BFA81DF6BCE600980037 /* Products */,
