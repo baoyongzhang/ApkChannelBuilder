@@ -34,7 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		29A8BFA71DF6BCE600980037 /* ApkCahnnelBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApkCahnnelBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A8BFA71DF6BCE600980037 /* ApkChannelBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApkChannelBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A8BFAA1DF6BCE600980037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29A8BFAC1DF6BCE600980037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29A8BFAE1DF6BCE600980037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			children = (
 				29A8BFC21DF94F7F00980037 /* CryptoSwift.framework */,
 				29A8BFBB1DF80C6400980037 /* ZipArchive.framework */,
-				29A8BFA91DF6BCE600980037 /* ApkCahnnelBuilder */,
+				29A8BFA91DF6BCE600980037 /* ApkChannelBuilder */,
 				29A8BFA81DF6BCE600980037 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,12 +71,12 @@
 		29A8BFA81DF6BCE600980037 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29A8BFA71DF6BCE600980037 /* ApkCahnnelBuilder.app */,
+				29A8BFA71DF6BCE600980037 /* ApkChannelBuilder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29A8BFA91DF6BCE600980037 /* ApkCahnnelBuilder */ = {
+		29A8BFA91DF6BCE600980037 /* ApkChannelBuilder */ = {
 			isa = PBXGroup;
 			children = (
 				29A8BFAA1DF6BCE600980037 /* AppDelegate.swift */,
@@ -86,15 +86,15 @@
 				29A8BFB31DF6BCE600980037 /* Info.plist */,
 				29A8BFB91DF7FEBA00980037 /* BuildViewController.swift */,
 			);
-			path = ApkCahnnelBuilder;
+			path = ApkChannelBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29A8BFA61DF6BCE600980037 /* ApkCahnnelBuilder */ = {
+		29A8BFA61DF6BCE600980037 /* ApkChannelBuilder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29A8BFB61DF6BCE600980037 /* Build configuration list for PBXNativeTarget "ApkCahnnelBuilder" */;
+			buildConfigurationList = 29A8BFB61DF6BCE600980037 /* Build configuration list for PBXNativeTarget "ApkChannelBuilder" */;
 			buildPhases = (
 				29A8BFA31DF6BCE600980037 /* Sources */,
 				29A8BFA41DF6BCE600980037 /* Frameworks */,
@@ -105,9 +105,9 @@
 			);
 			dependencies = (
 			);
-			name = ApkCahnnelBuilder;
-			productName = ApkCahnnelBuilder;
-			productReference = 29A8BFA71DF6BCE600980037 /* ApkCahnnelBuilder.app */;
+			name = ApkChannelBuilder;
+			productName = ApkChannelBuilder;
+			productReference = 29A8BFA71DF6BCE600980037 /* ApkChannelBuilder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 29A8BFA21DF6BCE600980037 /* Build configuration list for PBXProject "ApkCahnnelBuilder" */;
+			buildConfigurationList = 29A8BFA21DF6BCE600980037 /* Build configuration list for PBXProject "ApkChannelBuilder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29A8BFA61DF6BCE600980037 /* ApkCahnnelBuilder */,
+				29A8BFA61DF6BCE600980037 /* ApkChannelBuilder */,
 			);
 		};
 /* End PBXProject section */
@@ -276,13 +276,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9ZT457W8L7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
-				INFOPLIST_FILE = ApkCahnnelBuilder/Info.plist;
+				INFOPLIST_FILE = ApkChannelBuilder/Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/Carthage/Build/Mac @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baoyz.ApkCahnnelBuilder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baoyz.ApkChannelBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -292,13 +293,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9ZT457W8L7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
-				INFOPLIST_FILE = ApkCahnnelBuilder/Info.plist;
+				INFOPLIST_FILE = ApkChannelBuilder/Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/Carthage/Build/Mac @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baoyz.ApkCahnnelBuilder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baoyz.ApkChannelBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -307,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29A8BFA21DF6BCE600980037 /* Build configuration list for PBXProject "ApkCahnnelBuilder" */ = {
+		29A8BFA21DF6BCE600980037 /* Build configuration list for PBXProject "ApkChannelBuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29A8BFB41DF6BCE600980037 /* Debug */,
@@ -316,13 +318,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29A8BFB61DF6BCE600980037 /* Build configuration list for PBXNativeTarget "ApkCahnnelBuilder" */ = {
+		29A8BFB61DF6BCE600980037 /* Build configuration list for PBXNativeTarget "ApkChannelBuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29A8BFB71DF6BCE600980037 /* Debug */,
 				29A8BFB81DF6BCE600980037 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

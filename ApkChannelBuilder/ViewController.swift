@@ -25,6 +25,21 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.apkPath = UserDefaults.standard.string(forKey: "apkPath") ?? ""
+        self.pathLabel.stringValue = self.apkPath
+        self.outputPath = UserDefaults.standard.string(forKey: "outputPath") ?? ""
+        self.outputLabel.stringValue = self.outputPath
+        self.channelsText.string = UserDefaults.standard.string(forKey: "channels") ?? ""
+        self.keyText.stringValue = UserDefaults.standard.string(forKey: "encryptionKey") ?? ""
+        self.ivText.stringValue = UserDefaults.standard.string(forKey: "encryptionIv") ?? ""
+        
+        let encryption = UserDefaults.standard.string(forKey: "encryption") ?? "None"
+        for item in self.encryptionText.itemArray {
+            if item.title == encryption {
+                self.encryptionText.select(item)
+                break
+            }
+        }
     }
 
     override var representedObject: Any? {
@@ -45,7 +60,7 @@ class ViewController: NSViewController {
         openPanel.beginSheetModal(for: self.view.window!, completionHandler: {(result: Int) -> Void in
             if NSFileHandlingPanelOKButton == result {
                 if let url = openPanel.url {
-                    self.pathLabel.stringValue = url.lastPathComponent
+                    self.pathLabel.stringValue = url.path
                     self.apkPath = url.path
                 }
             }
@@ -72,16 +87,20 @@ class ViewController: NSViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if "StartBuild" == identifier {
             // 参数检查
-            if self.apkPath == nil {
+            if self.apkPath.isEmpty {
                 showMessage(text: "请选择 Apk 文件")
                 return false
             }
-            if self.outputPath == nil {
+            if self.outputPath.isEmpty {
                 showMessage(text: "请选择输出目录")
                 return false
             }
             if self.channelPrefixText.stringValue.isEmpty {
                 showMessage(text: "请输入渠道名称前缀")
+                return false
+            }
+            if (self.channelsText.string?.isEmpty)! {
+                showMessage(text: "请输入渠道名称")
                 return false
             }
             if "None" != self.encryptionText.selectedItem?.title {
@@ -91,7 +110,7 @@ class ViewController: NSViewController {
                 }
                 if (self.encryptionText.selectedItem?.title.contains("CBC"))!
                     && self.ivText.stringValue.isEmpty {
-                    showMessage(text: "CBC 模式需要输入向量")
+                    showMessage(text: "CBC 模式需要输入初始向量")
                     return false
                 }
             }
@@ -108,6 +127,15 @@ class ViewController: NSViewController {
             controller.encryption = self.encryptionText.selectedItem?.title
             controller.encryptionKey = self.keyText.stringValue
             controller.encryptionIv = self.ivText.stringValue
+            
+            // save
+            UserDefaults.standard.set(controller.apkPath, forKey: "apkPath")
+            UserDefaults.standard.set(controller.outputPath, forKey: "outputPath")
+            UserDefaults.standard.set(self.channelsText.string, forKey: "channels")
+            UserDefaults.standard.set(controller.channelPrefix, forKey: "channelPrefix")
+            UserDefaults.standard.set(controller.encryption, forKey: "encryption")
+            UserDefaults.standard.set(controller.encryptionKey, forKey: "encryptionKey")
+            UserDefaults.standard.set(controller.encryptionIv, forKey: "encryptionIv")
         }
     }
     
